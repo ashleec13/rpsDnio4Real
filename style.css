@@ -1,0 +1,44 @@
+/* START HOME PAGE */
+body {
+    background-color: #6ca069;
+    color: rgb(0, 48, 8);
+    font-family: "minion-3", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.title {
+    font-family: "zeplin-vf", sans-serif;
+    font-variation-settings: "CONX" 1, "CONY" 1;
+    font-size: 6em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#user-name {
+    color: white;
+    text-align: center;
+    font-size: 2em;
+}
+
+.imageContainer {
+    margin-top: 30px;
+    min-height: 250px;
+}
+
+.userImageBox,
+.computerImageBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.choiceImage {
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* END HOME PAGE */

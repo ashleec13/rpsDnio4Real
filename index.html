@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Dino Duels
+    </title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/ulv2ogi.css">
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <p class="title">Dino Duels</p>
+        <div class="playerSide">
+            <p id="user-name"></p>
+            <p id="roundNumber">Round: 1</p>
+            <p id="userScore">User Score: 0</p>
+            <p id="computerScore">Computer Score: 0</p>
+            <p id="result"></p>
+            </div>
+            <div class="playerOptions d-flex justify-content-center gap-3">
+                <button class="btn btn-success btn-lg" onclick="btnRock()">Dino</button>
+                <button class="btn btn-warning btn-lg" onclick="btnPaper()">Leaf</button>
+                <button class="btn btn-danger btn-lg" onclick="btnScissors()">Claws</button>
+        </div>
+
+        <div class="images d-flex justify-content-center gap-5 my-3">
+            <div class="text-center">
+                <p>Player</p>
+                <img id="userImage" src="" alt="User choice" width="150" />
+            </div>
+            <div class="text-center">
+                <p>Computer</p>
+                <img id="computerImage" src="" alt="Computer choice" width="150" />
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
