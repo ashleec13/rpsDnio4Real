@@ -21,28 +21,50 @@
     </header>
     <main>
         <p class="title">Dino Duels</p>
-        <div class="playerSide">
-            <p id="user-name"></p>
-            <p id="roundNumber">Round: 1</p>
-            <p id="userScore">User Score: 0</p>
-            <p id="computerScore">Computer Score: 0</p>
-            <p id="result"></p>
+        
+        <!-- Win Tracker Bar -->
+        <div class="winTracker">
+            <div class="winsContainer">
+                <div class="winSection user" id="userWin1"></div>
+                <div class="winSection user" id="userWin2"></div>
+                <div class="winSection user" id="userWin3"></div>
             </div>
-            <div class="playerOptions d-flex justify-content-center gap-3">
-                <button class="btn btn-success btn-lg" onclick="btnRock()">Dino</button>
-                <button class="btn btn-warning btn-lg" onclick="btnPaper()">Leaf</button>
-                <button class="btn btn-danger btn-lg" onclick="btnScissors()">Claws</button>
+            <div class="divider">VS</div>
+            <div class="winsContainer">
+                <div class="winSection computer" id="computerWin1"></div>
+                <div class="winSection computer" id="computerWin2"></div>
+                <div class="winSection computer" id="computerWin3"></div>
+            </div>
+        </div>
+        
+        <div class="gameInfoBar">
+            <div class="infoItem"><span class="label">Player:</span> <p id="user-name" style="margin: 5px 0;"></p></div>
+            <div class="infoItem"><span class="label">Round:</span> <p id="roundNumber" style="margin: 5px 0;">Round: 1</p></div>
+            <div class="infoItem"><span class="label">Result:</span> <p id="result" style="margin: 5px 0; min-height: 20px;"></p></div>
         </div>
 
-        <div class="images d-flex justify-content-center gap-5 my-3">
-            <div class="text-center">
-                <p>Player</p>
-                <img id="userImage" src="" alt="User choice" width="150" />
+        <div class="duelArena">
+            <div class="dinoSide playerSide">
+                <p class="playerLabel" id="playerLabel">You</p>
+                <p id="userScore" class="scoreText">0</p>
+                <img id="userImage" src="" alt="User choice" class="dinoImage" />
             </div>
-            <div class="text-center">
-                <p>Computer</p>
-                <img id="computerImage" src="" alt="Computer choice" width="150" />
+            
+            <div class="battleZone">VS</div>
+            
+            <div class="dinoSide computerSide">
+                <p class="playerLabel">Computer</p>
+                <p id="computerScore" class="scoreText">0</p>
+                <img id="computerImage" src="" alt="Computer choice" class="dinoImage" />
             </div>
+        </div>
+
+        <div class="winnerDisplay" id="winnerDisplay"></div>
+
+        <div class="playerOptions d-flex justify-content-center gap-3 mt-4">
+            <button class="dino-btn rock-btn" onclick="btnRock()">🦕 Dino</button>
+            <button class="dino-btn leaf-btn" onclick="btnPaper()">🌿 Leaf</button>
+            <button class="dino-btn claws-btn" onclick="btnScissors()">🪨 Claws</button>
         </div>
 
     </main>

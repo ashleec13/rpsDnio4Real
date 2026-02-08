@@ -1,44 +1,336 @@
 /* START HOME PAGE */
 body {
-    background-color: #6ca069;
+    background: linear-gradient(135deg, #556B2F 0%, #6B8E23 50%, #8FBC8F 100%);
     color: rgb(0, 48, 8);
     font-family: "minion-3", serif;
     font-weight: 400;
     font-style: normal;
+    min-height: 100vh;
+    padding: 20px;
 }
 
 .title {
     font-family: "zeplin-vf", sans-serif;
     font-variation-settings: "CONX" 1, "CONY" 1;
-    font-size: 6em;
+    font-size: 5em;
     text-align: center;
-    margin-top: 20px;
+    margin: 20px 0 30px 0;
+    color: #fff;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4), -2px -2px 4px rgba(255, 255, 255, 0.2);
+    letter-spacing: 2px;
 }
 
-#user-name {
+/* Game Info Bar */
+.gameInfoBar {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 20px 0 30px 0;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.infoItem {
+    text-align: center;
     color: white;
-    text-align: center;
-    font-size: 2em;
+    font-size: 1.1em;
+    font-weight: bold;
 }
 
-.imageContainer {
-    margin-top: 30px;
-    min-height: 250px;
+.infoItem .label {
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-.userImageBox,
-.computerImageBox {
+#user-name, #roundNumber, #result {
+    color: #ffeb3b;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Duel Arena */
+.duelArena {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 40px;
+    margin: 40px 0;
+    position: relative;
+}
+
+.dinoSide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    padding: 30px;
+    width: 400px;
+    min-height: 400px;
+}
+
+.playerSide {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.3) 0%, rgba(139, 195, 74, 0.2) 100%);
+    border-radius: 20px;
+    border: 3px solid rgba(76, 175, 80, 0.6);
+}
+
+.computerSide {
+    background: linear-gradient(135deg, rgba(156, 39, 176, 0.3) 0%, rgba(103, 58, 183, 0.2) 100%);
+    border-radius: 20px;
+    border: 3px solid rgba(156, 39, 176, 0.6);
+}
+
+.playerLabel {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.scoreText {
+    font-size: 3.5em;
+    font-weight: bold;
+    color: #ffeb3b;
+    margin: 10px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    line-height: 1;
+}
+
+.dinoImage {
+    max-width: 180px;
+    max-height: 180px;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.3));
+    animation: hover 3s ease-in-out infinite;
+}
+
+@keyframes hover {
+    0%, 100% {
+        transform: translateY(0px) scaleX(1);
+    }
+    50% {
+        transform: translateY(-10px) scaleX(1);
+    }
+}
+
+.playerSide .dinoImage {
+    animation: hoverLeft 3s ease-in-out infinite;
+}
+
+@keyframes hoverLeft {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Battle Zone */
+.battleZone {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff8c42 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 30px rgba(255, 107, 107, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.2);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 30px rgba(255, 107, 107, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.2);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 50px rgba(255, 107, 107, 0.8), inset 0 0 30px rgba(255, 255, 255, 0.3);
+        transform: scale(1.05);
+    }
+}
+
+/* Win Tracker Bar */
+.winTracker {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;
+    margin: 30px 0;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-.choiceImage {
-    max-width: 200px;
-    max-height: 200px;
-    object-fit: contain;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+.winsContainer {
+    display: flex;
+    gap: 12px;
+}
+
+.winSection {
+    width: 45px;
+    height: 45px;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    transition: all 0.4s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.winSection.user.filled {
+    background-color: #22c55e;
+    border-color: #16a34a;
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.6);
+}
+
+.winSection.computer.filled {
+    background-color: #a855f7;
+    border-color: #9333ea;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
+}
+
+.divider {
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Player Options - Dino Buttons */
+.playerOptions {
+    justify-content: center !important;
+    gap: 20px !important;
+    margin-top: 30px !important;
+    flex-wrap: wrap;
+}
+
+.dino-btn {
+    padding: 15px 40px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    font-family: "minion-3", serif;
+    transform: translateY(0);
+}
+
+.dino-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.dino-btn:active {
+    transform: translateY(0);
+}
+
+.rock-btn {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    border: 2px solid #366c37;
+}
+
+.rock-btn:hover {
+    background: linear-gradient(135deg, #558B54 0%, #4a8f4c 100%);
+}
+
+.leaf-btn {
+    background: linear-gradient(135deg, #FFB300 0%, #FFA500 100%);
+    border: 2px solid #CC8A00;
+}
+
+.leaf-btn:hover {
+    background: linear-gradient(135deg, #FFC107 0%, #FFB81C 100%);
+}
+
+.claws-btn {
+    background: linear-gradient(135deg, #f44336 0%, #da190b 100%);
+    border: 2px solid #b71c1c;
+}
+
+.claws-btn:hover {
+    background: linear-gradient(135deg, #ef5350 0%, #e53935 100%);
+}
+
+/* Game Over Styling */
+.winnerDisplay {
+    min-height: 200px;
+    display: none;
+    margin: 40px 0;
+    padding: 40px;
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.4) 0%, rgba(139, 195, 74, 0.3) 100%);
+    border-radius: 20px;
+    border: 3px solid rgba(76, 175, 80, 0.6);
+    text-align: center;
+}
+
+.winnerDisplay.show {
+    display: block;
+    animation: slideDown 0.5s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.winnerMessage {
+    font-family: "minion-3", serif;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 20px 0;
+    letter-spacing: 1px;
+}
+
+.resetButtonContainer {
+    margin-top: 30px;
+}
+
+.resetBtn {
+    padding: 15px 45px;
+    font-size: 1.2em;
+    font-weight: bold;
+    background: #FFB300;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    font-family: "minion-3", serif;
+}
+
+.resetBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    background: #FFD000;
+}
+
+.resetBtn:active {
+    transform: translateY(0);
 }
 
 /* END HOME PAGE */
